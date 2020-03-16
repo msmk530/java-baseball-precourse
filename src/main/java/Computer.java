@@ -14,10 +14,12 @@ public class Computer {
         while(computerNumber.length()<NUMBER_LENGTH) {
             int number = random.nextInt(MAX_RANGE) + MIN_RANGE;
 
+            /* 3자리 수가 각각 다른 수가 될 수 있도록 만든다. */
             if (!computerNumber.contains(Integer.toString(number))){
                 computerNumber += Integer.toString(number);
             }
         }
-     System.out.println("생성된 난수는 : " + computerNumber);
+
     }
+
 }
