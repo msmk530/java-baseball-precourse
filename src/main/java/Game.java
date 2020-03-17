@@ -1,5 +1,8 @@
 import java.util.*;
 
+/**
+ * 게임을 진행하는 클래스.
+ */
 public class Game {
 
     /* 난수를 생성하는 컴퓨터 객체 */
@@ -17,27 +20,27 @@ public class Game {
     public void start(){
         System.out.println("게임을 시작합니다. ");
 
-
+        /* 사용자가 종료할 때 까지 게임 진 */
         while(selectButton!=2) {
+            /* 정답 여부를 초기화 */
             gameResult=false;
-            /* 게임이 시작될 때 마다 새로운 컴퓨터 객체를 통해 새로운 난수 생성*/
+
+            /* 게임이 시작될 때 마다 새로운 컴퓨터 객체를 통해 새로운 난수 생성 */
             computer = new Computer();
 
             System.out.println("생성된 컴퓨터 난수는 : " + computer.computerNumber);
-            /* 게임이 시작되면 유저객체를 만들어 숫자를 입력받는다. */
+
+            /* 게임이 시작되면 유저객체를 만들어 숫자를 입력고 strike와 ball수를 확인하며 게임 진행. */
             user = new User();
-
-
             while(!gameResult) {
                 user.selectNumber();
                 strikeAndBall();
             }
 
+            /* 정답을 맞춘 후 재게임 또는 종료 선택을 위한 메소드 호출 */
             endGame();
-
         }
-
-
+        System.out.println("게임을 종료합니다.");
     }
 
     /* 스트라이크와 볼 수를 출력 */
@@ -67,7 +70,7 @@ public class Game {
             gameResult = false;
         }
         else{
-            System.out.println("스트라이크 수는 : " + strike + "볼의 수는 : " + ball);
+            System.out.println(strike + " 스트라이크 " + ball + " 볼");
             gameResult = false;
         }
 

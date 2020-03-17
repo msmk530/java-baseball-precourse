@@ -1,10 +1,16 @@
 import java.util.*;
 
+/**
+ * 형식에 맞는 사용자의 입력을 받는 클래스.
+ */
 public class User {
 
     Scanner sc = new Scanner(System.in);
+
+    /* 유저가 선택한 수가 담길 변수 */
     String userNumber="";
 
+    /* 유저의 입력을 받는 메소드 */
     public void selectNumber(){
         while(true) {
             System.out.println("숫자를 입력 하세요 : ");
