@@ -21,11 +21,11 @@ public class User {
 
     /* 유저의 입력을 받는 메소드 */
     public void selectNumber(){
-        while(true) {
+        while (true) {
             System.out.println("숫자를 입력 하세요 : ");
             String number = sc.next();
 
-            if(lengthOfNumber(number)&&correctNumber(number)&&overlapNumber(number)){
+            if (lengthOfNumber(number)&&correctNumber(number)&&overlapNumber(number)) {
                 userNumber = number;
                 break;
             }else {
@@ -38,7 +38,7 @@ public class User {
 
     /* 유저가 입력한 숫자가 3자리 숫자인지 */
     private boolean lengthOfNumber(String str){
-        if(str.length() != NUMBER_OF_LENGTH){
+        if (str.length() != NUMBER_OF_LENGTH) {
             return false;
         }
         return true;
@@ -46,8 +46,8 @@ public class User {
 
     /* 유저가 입력한 숫자가 1~9 까지의 숫자인지 */
     private boolean correctNumber(String str){
-        for(int i=0; i<str.length(); i++){
-            if(str.charAt(i)< MIN_NUM || str.charAt(i)> MAX_NUM ){
+        for (int i=0; i<str.length(); i++) {
+            if (str.charAt(i)< MIN_NUM || str.charAt(i)> MAX_NUM ) {
                 return false;
             }
         }
@@ -57,10 +57,10 @@ public class User {
     /* 유저가 입력한 숫자에 중복된 수가 있는지  */
     private boolean overlapNumber(String str){
         String temp;
-        for(int i=0; i<str.length(); i++){
+        for (int i=0; i<str.length(); i++) {
             temp = str.substring(i+1,str.length());
 
-            if(temp.contains(Character.toString(str.charAt(i)))){
+            if (temp.contains(Character.toString(str.charAt(i)))) {
                 return false;
             }
         }

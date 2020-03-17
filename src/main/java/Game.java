@@ -7,6 +7,7 @@ public class Game {
 
     /* 정답일때의 스트라이크 수 */
     private static final int CORRECT_STRIKE = 3;
+
     /* 게임 종료를 위한 수 */
     private static final int END_GAME = 2;
 
@@ -29,7 +30,7 @@ public class Game {
         System.out.println("게임을 시작합니다. ");
 
         /* 사용자가 종료할 때 까지 게임 진 */
-        while(selectButton!= END_GAME) {
+        while (selectButton!= END_GAME) {
             /* 정답 여부를 초기화 */
             gameResult=false;
 
@@ -40,7 +41,7 @@ public class Game {
 
             /* 게임이 시작되면 유저객체를 만들어 숫자를 입력고 스트라이크 수와 볼수를 확인하며 게임 진행. */
             user = new User();
-            while(!gameResult) {
+            while (!gameResult) {
                 user.selectNumber();
                 strikeAndBall();
             }
@@ -61,19 +62,19 @@ public class Game {
         /* 만든 유저 객체에 입력한 수를 가져와서 변수에 저장 */
         String userNumber = user.userNumber;
 
-        for(int i=0; i<userNumber.length(); i++){
-            if(userNumber.charAt(i) == computerNumber.charAt(i)){
+        for (int i=0; i<userNumber.length(); i++) {
+            if (userNumber.charAt(i) == computerNumber.charAt(i)) {
                 strike ++;
             }
-            else if(computerNumber.contains(Character.toString(userNumber.charAt(i)))){
+            else if (computerNumber.contains(Character.toString(userNumber.charAt(i)))) {
                 ball ++;
             }
         }
 
-        if(strike == CORRECT_STRIKE){
+        if (strike == CORRECT_STRIKE) {
             System.out.println("정답을 맞추셨습니다. ");
             gameResult = true;
-        }else if(strike ==0 && ball == 0){
+        }else if (strike ==0 && ball == 0) {
             System.out.println("nothing!!!");
             gameResult = false;
         }

@@ -22,11 +22,11 @@ public class Computer {
     /* 컴퓨터 객체 생성시 난수 발생 생성자 */
     public Computer(){
 
-        while(computerNumber.length()<NUMBER_LENGTH) {
+        while (computerNumber.length()<NUMBER_LENGTH) {
             int number = random.nextInt(MAX_RANGE) + MIN_RANGE;
 
             /* 3자리 수가 각각 다른 수가 될 수 있도록 만든다. */
-            if (!computerNumber.contains(Integer.toString(number))){
+            if (!computerNumber.contains(Integer.toString(number))) {
                 computerNumber += Integer.toString(number);
             }
         }
