@@ -37,8 +37,6 @@ public class Game {
             /* 게임이 시작될 때 마다 새로운 컴퓨터 객체를 통해 새로운 난수 생성 */
             computer = new Computer();
 
-            System.out.println("생성된 컴퓨터 난수는 : " + computer.computerNumber);
-
             /* 게임이 시작되면 유저객체를 만들어 숫자를 입력고 스트라이크 수와 볼수를 확인하며 게임 진행. */
             user = new User();
             while (!gameResult) {
