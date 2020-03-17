@@ -5,6 +5,15 @@ import java.util.*;
  */
 public class User {
 
+    /* 입력한 숫자의 자릿수 */
+    private static final int NUMBER_OF_LENGTH = 3;
+
+    /* 입력한 문자가 조건에 맞는 숫자이기 위한 최솟값*/
+    private static final char MIN_NUM = '1';
+
+    /* 입력한 문자가 조건에 맞는 숫자이기 위한 최댓값*/
+    private static final char MAX_NUM = '9';
+
     Scanner sc = new Scanner(System.in);
 
     /* 유저가 선택한 수가 담길 변수 */
@@ -29,7 +38,7 @@ public class User {
 
     /* 유저가 입력한 숫자가 3자리 숫자인지 */
     private boolean lengthOfNumber(String str){
-        if(str.length()!=3){
+        if(str.length() != NUMBER_OF_LENGTH){
             return false;
         }
         return true;
@@ -38,7 +47,7 @@ public class User {
     /* 유저가 입력한 숫자가 1~9 까지의 숫자인지 */
     private boolean correctNumber(String str){
         for(int i=0; i<str.length(); i++){
-            if(str.charAt(i)<'1' || str.charAt(i)>'9'){
+            if(str.charAt(i)< MIN_NUM || str.charAt(i)> MAX_NUM ){
                 return false;
             }
         }
@@ -50,6 +59,7 @@ public class User {
         String temp;
         for(int i=0; i<str.length(); i++){
             temp = str.substring(i+1,str.length());
+
             if(temp.contains(Character.toString(str.charAt(i)))){
                 return false;
             }
