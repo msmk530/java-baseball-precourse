@@ -18,9 +18,8 @@ public class User {
             }
         }
 
-        System.out.println("유저가 입력한 숫자는 : " + userNumber);
-    }
 
+    }
 
     /* 유저가 입력한 숫자가 3자리 숫자인지 */
     private boolean lengthOfNumber(String str){
@@ -29,6 +28,7 @@ public class User {
         }
         return true;
     }
+
     /* 유저가 입력한 숫자가 1~9 까지의 숫자인지 */
     private boolean correctNumber(String str){
         for(int i=0; i<str.length(); i++){
@@ -38,12 +38,12 @@ public class User {
         }
         return true;
     }
+
     /* 유저가 입력한 숫자에 중복된 수가 있는지  */
     private boolean overlapNumber(String str){
         String temp;
         for(int i=0; i<str.length(); i++){
             temp = str.substring(i+1,str.length());
-
             if(temp.contains(Character.toString(str.charAt(i)))){
                 return false;
             }
