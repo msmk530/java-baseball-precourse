@@ -17,3 +17,6 @@
     * 스트라이크의 수와 볼 수 출력
 4. 유저가 숫자를 맞추었을때
     * 1번은 재게임 2번은 종료
+
+## 실행결과
+<img width="607" alt="스크린샷 2020-04-27 오후 5 58 28" src="https://user-images.githubusercontent.com/49441876/80353750-bf1a1280-88b0-11ea-8cfc-fdb1717b9a9b.png">
